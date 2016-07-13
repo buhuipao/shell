@@ -51,9 +51,10 @@ echo "Hello world, buhuipao\!" > /lvm/
 ls /lvm/ #可以看到一个文件和lost+found文件夹
 lvcreate -n snap -L 300M -s /dev/vg0/lv0
 lvs
+dd if=/dev/zero of=/lvm/testfile bs=1M count=100
 umount /lvm/
 lvconvert --merge /dev/vg0/snap #恢复后快照会自动删除
 lvs
-mount /dev# vg0/lv0 /lvm/
+mount /dev/vg0/lv0 /lvm/
 ls /lvm/  #100M的文件不见了，恢复成功
 
