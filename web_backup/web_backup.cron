@@ -1,0 +1,5 @@
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
+HOME=/root
+
+00 1 * * * root /home/buhuipao/web_backup.sh
